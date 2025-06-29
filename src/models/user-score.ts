@@ -1,12 +1,12 @@
-import { Model, DataTypes, InferAttributes, InferCreationAttributes, CreationOptional } from 'sequelize';
-import { sequelize } from '../config';
+import { Model, DataTypes, InferAttributes, InferCreationAttributes, CreationOptional } from 'sequelize'
+import { sequelize } from '../config'
 import { User } from './user'
 
 export class UserScore extends Model<InferAttributes<UserScore>, InferCreationAttributes<UserScore>> {
-  declare userId: string;
-  declare totalScore: number;
-  declare createdAt: CreationOptional<Date>;
-  declare updatedAt: CreationOptional<Date>;
+  declare userId: string
+  declare totalScore: number
+  declare createdAt: CreationOptional<Date>
+  declare updatedAt: CreationOptional<Date>
 }
 
 UserScore.init(
@@ -49,14 +49,14 @@ UserScore.init(
       },
     ],
   }
-);
+)
 
 
 
 
 UserScore.belongsTo(User, {
   foreignKey: 'userId'
-});
+})
 
 User.hasOne(UserScore, {
   foreignKey: 'userId'

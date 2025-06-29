@@ -37,8 +37,7 @@ export const updateUserScore = async (req: Request, res: Response, next: NextFun
   try {
     const { id } = req.params
     const { totalScore } = req.body
-    if(typeof totalScore !== 'number')
-    {
+    if (typeof totalScore !== 'number') {
       throw new APIError('totalScore must be a number', 400)
     }
     const userScore = await UserScore.findByPk(id)
