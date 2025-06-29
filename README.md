@@ -11,7 +11,7 @@ This project is part of a backend development assignment for **Sunflower**. It i
 - Get top N users from the leaderboard
 - Get a user’s current rank and 5 users above/below
 
-postman collection was added to the assignment
+***postman collection was added to the assignment***
 ---
 
 ## Tech Stack
@@ -32,7 +32,6 @@ postman collection was added to the assignment
 - Users are stored in a `users` table.
 - Their scores are in a separate `user_scores` table (1:1 relationship).
 
----
 
 ### PostgreSQL for Core Data
 
@@ -40,7 +39,6 @@ postman collection was added to the assignment
 - An index on `totalScore DESC, userId ASC` makes leaderboard queries fast and allows proper ranking even when users have the same score.
 - Used SQL’s `RANK()` to calculate positions when needed.
 
----
 
 ### Redis for Speed
 
@@ -48,7 +46,6 @@ postman collection was added to the assignment
 - Redis sorted sets (`ZADD`, `ZRANGE`, `ZREVRANK`) are used to manage leaderboard scores.
 - PostgreSQL is always the source of truth.
 
----
 
 
 ### Efficient Queries
@@ -73,7 +70,7 @@ docker-compose up
 
 
 ---
-### 1. Clone the Repository
+### Clone the Repository
 
 ```bash
 git clone https://github.com/your-username/sunflower-leaderboard.git

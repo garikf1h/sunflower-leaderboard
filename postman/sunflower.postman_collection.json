@@ -1,0 +1,127 @@
+{
+	"info": {
+		"_postman_id": "6d047f90-6fbd-459c-8e23-1e1f64641cd4",
+		"name": "sunflower",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17393727"
+	},
+	"item": [
+		{
+			"name": "newUserWithScore",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"hello1\",\r\n    \"totalScore\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "javascript"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUserScore",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"totalScore\": 20\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/9b46a1cb-66b0-411b-a405-d85a98340055/score",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"9b46a1cb-66b0-411b-a405-d85a98340055",
+						"score"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTopN",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/leaderboard/top?topN=50",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"leaderboard",
+						"top"
+					],
+					"query": [
+						{
+							"key": "topN",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserAndSurroundingScore",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"totalScore\": 20\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/leaderboard/user/2e1edf62-15d3-40e3-9675-82bcd8456d60",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"leaderboard",
+						"user",
+						"2e1edf62-15d3-40e3-9675-82bcd8456d60"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
