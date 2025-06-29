@@ -1,6 +1,7 @@
 # User Leaderboard Backend
 
 This project is part of a backend development assignment for **Sunflower**. It implements a scalable leaderboard system using Node.js, PostgreSQL, Redis, and Docker.
+
 ***postman collection was added to the assignment***
 
 ---
