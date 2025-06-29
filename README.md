@@ -73,7 +73,7 @@ docker-compose up
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/sunflower-leaderboard.git
+git clone https://github.com/garikf1h/sunflower-leaderboard.git
 cd sunflower-leaderboard
 
 ---

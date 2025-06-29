@@ -12,7 +12,7 @@ export const getTopUsers = async (req: Request, res: Response, next: NextFunctio
       throw new APIError('Invalid or missing "totalScore"', 400)
     }
     const topN = req.query.topN ? parseInt(req.query.topN) : 10
-    let result = []
+    let results = []
     try {
       const raw = await redis.zrange(REDIS_KEY, 0, topN - 1, 'REV', 'WITHSCORES')
       if (raw.length < 0) {
@@ -20,7 +20,7 @@ export const getTopUsers = async (req: Request, res: Response, next: NextFunctio
       }
 
       for (let i = 0; i < raw.length; i += 2) {
-        result.push({
+        results.push({
           rank: i / 2 + 1,
           userId: raw[i],
           totalScore: parseInt(raw[i + 1], 10),
@@ -33,14 +33,14 @@ export const getTopUsers = async (req: Request, res: Response, next: NextFunctio
         order: [['totalScore', 'DESC']],
         limit: topN
       })
-      result = topUsers.map((entry, index) => ({
+      results = topUsers.map((entry, index) => ({
         rank: index + 1,
         userId: entry.userId,
         totalScore: entry.totalScore,
       }))
     }
 
-    res.json(result)
+    res.json({ data: results })
   } catch (error) {
     next(error)
   }
