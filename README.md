@@ -10,8 +10,7 @@ This project is part of a backend development assignment for **Sunflower**. It i
 - Update user scores
 - Get top N users from the leaderboard
 - Get a user’s current rank and 5 users above/below
-
-***postman collection was added to the assignment***
+- ***postman collection was added to the assignment***
 ---
 
 ## Tech Stack
